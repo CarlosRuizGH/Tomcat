@@ -1,0 +1,4 @@
+insert into department (dep_name, dep_desc) values ("KPop","Korean Pop");
+insert into department (dep_name) values ("Pop");
+insert into department (dep_name) values ("Indie Rock");
+insert into department (dep_name) values ("Salsa");

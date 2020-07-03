@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [29/Jun/2020:14:59:20 -0400] "GET /store/queryDatabaseGood.jsp HTTP/1.1" 200 721

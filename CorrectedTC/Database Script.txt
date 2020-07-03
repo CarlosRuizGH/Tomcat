@@ -1,0 +1,121 @@
+create database disqueraDB;
+
+use disqueraDB;
+
+create table menu (
+	menu_id int auto_increment,
+	title varchar(40) NOT NULL,
+	descr varchar(200),
+	PRIMARY KEY (menu_id)
+	);
+
+create table webpage (
+	page_url varchar(40),
+	title varchar(20) NOT NULL,
+	descr varchar(200),
+	menu_id int,
+	PRIMARY KEY (page_url),
+	FOREIGN KEY (menu_id) REFERENCES menu(menu_id) ON DELETE CASCADE
+	);
+
+create table previouswebpage (
+	current_page_url varchar(40),
+	previous_page_url varchar(40),
+	PRIMARY KEY (current_page_url, previous_page_url),
+	FOREIGN KEY (current_page_url) REFERENCES webpage(page_url) ON DELETE CASCADE,
+	FOREIGN KEY (previous_page_url) REFERENCES webpage(page_url) ON DELETE CASCADE
+	);
+
+create table role (
+	role_id int auto_increment,
+	role_name varchar(20),
+	role_descr varchar(200),
+	PRIMARY KEY (role_id)
+	);
+
+create table rolewebpage (
+	role_id int,
+	page_url varchar(40),
+	date_assign datetime,
+	PRIMARY KEY (role_id, page_url),
+	FOREIGN KEY (page_url) REFERENCES webpage(page_url) ON DELETE CASCADE,
+	FOREIGN KEY (role_id) REFERENCES role(role_id) ON DELETE CASCADE
+	);
+
+create table user (
+	user_id int auto_increment,
+	first_name varchar(20),
+	last_name varchar(20),
+	username varchar(20),
+	email varchar(40) NOT NUll,
+	hashing mediumtext NOT NUll,
+	user_picture varchar(100),
+	user_address varchar(100),
+	joined_date datetime,
+	PRIMARY KEY (user_id)
+	);
+
+create table roleuser (
+	role_id int,
+	user_id int,
+	date_assign datetime,
+	PRIMARY KEY (role_id, user_id),
+	FOREIGN KEY (role_id) REFERENCES role (role_id),
+	FOREIGN KEY (user_id) REFERENCES user (user_id)
+	);
+
+create table department (
+	dep_id int auto_increment,
+	dep_name varchar(20) NOT NULL,
+	dep_desc varchar(200),
+	PRIMARY KEY (dep_id)
+	);
+
+create table product (
+	prod_id int auto_increment,
+	prod_name varchar(64) NOT NULL,
+	prod_author varchar(20),
+	prod_descr varchar(200),
+	dep_id int,
+	bid_amount float,
+	prod_pic varchar(100),
+	prod_date varchar(32),
+	seller_id int,
+	PRIMARY KEY (prod_id),
+	FOREIGN KEY (dep_id) REFERENCES department (dep_id),
+	FOREIGN KEY (seller_id) REFERENCES user (user_id)
+	);
+
+create table bids (
+	bid_id int auto_increment,
+	bid_product int,
+	bid_user int,
+	quantity float,
+	bid_winner boolean,
+	bid_date datetime,
+	PRIMARY KEY (bid_id),
+	FOREIGN KEY (bid_product) REFERENCES product(prod_id),
+	FOREIGN KEY (bid_user) REFERENCES user(user_id)
+	);
+
+create table transaction (
+	trans_id int auto_increment,
+	prod_id int,
+	seller int,
+	buyer int,
+	selling_price float,
+	trans_date datetime,
+	PRIMARY KEY (trans_id),
+	FOREIGN KEY (prod_id) REFERENCES product(prod_id),
+	FOREIGN KEY (seller) REFERENCES user(user_id),
+	FOREIGN KEY (buyer) REFERENCES user(user_id)
+	);
+
+
+
+create user 'administrator'@'localhost' identified by 'mobiledb';
+
+grant select, insert, update, delete on disqueraDB.department to 'administrator'@'localhost';
+grant select, insert, update, delete on disqueraDB.user to 'administrator'@'localhost';
+grant select, insert, update, delete on disqueraDB.product to 'administrator'@'localhost';
+
