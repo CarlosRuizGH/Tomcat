@@ -1,10 +1,11 @@
 <%/******
  This page create a connection to the Department database, and list all departments in the table department using the 
-//ut.JAR.CPEN410.ApplicationDBManager class.**/
+//storeClasses.JAR.classes.ApplicationDBManager class.**/
 %>
 
+
 <%//Import the ut.JAR.CPEN410 package for accessing the database %>
-<%@ page import="ut.JAR.CPEN410.*"%>
+<%@ page import="storeClasses.JAR.classes.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>
 
@@ -15,7 +16,7 @@
 	</head>
 	<body>
 	<table border=1>
-	<tr><td>Name</td><td>Building</td></tr>
+	<tr><td>Name</td><td>Description</td></tr>
 	<%
 	//Try to connect the database using the applicationDBManager class
 	try{
@@ -35,7 +36,7 @@
 				//Count each retrieved record from the query
 				count++;%>
 				<tr>
-				<%//Print the DepartmentName and the Building%>
+				<%//Print the dep_name and the dep_desc%>
 				<td><%=res.getString(2)%></td><td><%=res.getString(1)%></td>
 				</tr>
 				

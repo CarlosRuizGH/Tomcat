@@ -1,6 +1,6 @@
 
 //This class belongs to the ut.JAR.CPEN410 package
-package ut.JAR.CPEN410;
+package storeClasses.JAR.classes;
 
 //Import the java.sql package for managing the ResulSet objects
 import java.sql.* ;

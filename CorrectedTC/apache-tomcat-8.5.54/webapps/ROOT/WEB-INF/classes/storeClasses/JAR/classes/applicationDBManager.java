@@ -1,9 +1,9 @@
-//This class belongs to the ut.JAR.CPEN410 package
+
+//This class belongs to the storeClasses.JAR.classes package
 package storeClasses.JAR.classes;
 
 //Import the java.sql package for managing the ResulSet objects
 import java.sql.* ;
-
 /******
 	This class manage a connection to the Department database and it should be accessed from the front End. Therefore,
 	this class must contain all needed methods for manipulating data without showing how to access the database
@@ -12,7 +12,7 @@ import java.sql.* ;
 public class applicationDBManager{
 
 	//myDBConn is an MySQLConnector object for accessing to the database
-	private MySQLConnector myDBConn;
+	private MySQLCompleteConnector myDBConn;
 	
 	/********
 		Default constructor
@@ -22,7 +22,7 @@ public class applicationDBManager{
 	*/
 	public applicationDBManager(){
 		//Create the MySQLConnector object
-		myDBConn = new MySQLConnector();
+		myDBConn = new MySQLCompleteConnector();
 		
 		//Open the connection to the database
 		myDBConn.doConnection();
@@ -45,7 +45,7 @@ public class applicationDBManager{
 		//Define the table where the selection is performed
 		tables="department";
 		//Define the list fields list to retrieve from the table department
-		fields ="dept_name, dept_desc";
+		fields ="dept_name, dept_descr";
 		
 		
 		System.out.println("listing...");

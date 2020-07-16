@@ -1,4 +1,4 @@
-//This class belongs to the ut.JAR.CPEN410 package
+//This class belongs to the storeClasses.JAR.classes package
 package storeClasses.JAR.classes;
 
 //Import the java.sql package for managing the ResulSet objects
@@ -10,7 +10,7 @@ import java.sql.* ;
 public class MySQLCompleteConnector{
 
 	//Database credential <jdbc:<protocol>://<hostName>/<databaseName>>
-	private String DB_URL="jdbc:mysql://localhost/storedb";
+	private String DB_URL="jdbc:mysql://localhost/disqueradb";
 	
 	//Database authorized user information
 	private String USER="carlosd";

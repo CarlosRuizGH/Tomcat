@@ -77,38 +77,24 @@ create table product (
 	prod_author varchar(20),
 	prod_descr varchar(200),
 	dep_id int,
-	bid_amount float,
+	bid_id int,
 	prod_pic varchar(100),
 	prod_date varchar(32),
-	seller_id int,
 	PRIMARY KEY (prod_id),
 	FOREIGN KEY (dep_id) REFERENCES department (dep_id),
-	FOREIGN KEY (seller_id) REFERENCES user (user_id)
+	FOREIGN KEY (bid_id) REFERENCES bids (bid_id)
 	);
 
 create table bids (
 	bid_id int auto_increment,
 	bid_product int,
 	bid_user int,
-	quantity float,
-	bid_winner boolean,
+	bid_amount float,
+	bid_owner boolean,
 	bid_date datetime,
 	PRIMARY KEY (bid_id),
 	FOREIGN KEY (bid_product) REFERENCES product(prod_id),
 	FOREIGN KEY (bid_user) REFERENCES user(user_id)
-	);
-
-create table transaction (
-	trans_id int auto_increment,
-	prod_id int,
-	seller int,
-	buyer int,
-	selling_price float,
-	trans_date datetime,
-	PRIMARY KEY (trans_id),
-	FOREIGN KEY (prod_id) REFERENCES product(prod_id),
-	FOREIGN KEY (seller) REFERENCES user(user_id),
-	FOREIGN KEY (buyer) REFERENCES user(user_id)
 	);
 
 

@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Your first web form!</title>
+	</head>
+	<body>
+		<form id="form_1" action="addProduct.jsp" method="post">
+			<table border="0">
+            <tr>
+                   <td> Department: </td>
+  						 <td> <input list="department" name="department"></td>
+  						  <datalist id="department">
+   							 <option value="Korean Pop">
+    						 <option value="Pop">
+    						 <option value="Indie Rock">
+    						 <option value="Salsa">
+  						  </datalist>
+				</tr>
+				<tr>
+					<td> Product Name: </td>
+					<td><input type="text" id="productName"  name="productName" /></td>
+				</tr>
+				<tr>
+					<td> Description: </td>
+					<td><textarea rows="4" cols="50" name="pDescription" form="usrform"></textarea>
+				</tr>
+				<tr>
+                    <td> Starting Bid Value: </td>
+       				<td> <span class="input-group-addon">$</span>
+        			     <input type="number"type="number" id="startingBid" name="startingBid">
+   				    
+				</tr>
+                
+                <td>Select all images of Product:</td>
+ 			 	<td><input type="file" id="productImage" name="productImage" multiple>
+                
+				<tr>
+					<td>Ending Bid Date:</td>
+  					<td><input type="datetime-local" id="endingBid" name="endingBid">
+				</tr>
+			</table>
+			<input type="submit" id="Submit" value="submit" />
+			<input type="reset" id="Submit" value="reset" />
+		</form>
+	</body>
+</html>
+

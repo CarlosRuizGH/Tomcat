@@ -46,7 +46,7 @@ public class applicationDBManager{
 		//Define the table where the selection is performed
 		tables="department";
 		//Define the list fields list to retrieve from the table department
-		fields ="dept_name, building";
+		fields ="dept_name, dept_descr";
 		
 		
 		System.out.println("listing...");

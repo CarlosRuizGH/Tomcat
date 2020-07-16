@@ -1,0 +1,52 @@
+C:\Program Files\Java\jdk1.8.0_241\binCATALINA:
+C:\Users\CD\Desktop\Mobile\Trading Outpost\Tomcat\CorrectedTC\apache-tomcat-8.5.54
+
+classpath:
+%CATALINA%\lib\servlet-api.jar;.;%CATALINA%\webapps\Root\WEB-INF\classes\;%CATALINA%\lib\mysql-connector-java-8.0.18.jar;%CATALINA%\lib\commons-codec-1.11.jar;%CATALINA%\lib\java-json.jar;%CATALINA%\lib\CPEN410-jar.jar
+
+javahome:
+C:\Program Files\Java\jdk1.8.0_241
+
+path:
+C:\Program Files\MySQL\MySQL Shell 8.0\bin\
+%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\
+C:\Program Files\Java\jdk1.8.0_241\bin
+
+- Corregir la base de datos:
+	- La tabla de transaction es necesaria?
+
+- Cual seria el previous page del homepage
+
+- 
+- en que folder se ponen las fotos para que aparezcan en el website? 
+	- como la de los productos o si un user va a tener un profile pic 
+
+- corregir error de codec en applicationDBauthenticationGood
+
+
+
+- Empiezo por el homepage? o crear un Usuario? ______________
+
+
+
+- pagina jsp que busca los productos ____________
+
+despues de q
+
+=======================================================================================================================================
+okay no grabe. (para acordarme de lo que hicimos y estes al tanto)
+Empezamos corrigiendo mi codec.
+y luego pasamos a la base de datos para corregirla.
+eliminamos unas cosas y finalizamos con una mejorada. te envie el link donde esta la ultima ver.
+me aclaro donde se ponian las fotos.
+me dijo que html no los teniamos que usar, que maybe para la pagina principal donde se buscan productos. pero como todo requiere validacion despues de que se hace la busqueda de productos debe ser jsp. 
+
+y me dijo que debemos empezar con la pagina de busqueda de productos principal.
+=======================================================================================================================================
+
+
+
+Usar applicationDBAuthenticationGood para authenticar
+Usar MySqlCompleteConnector para conectar a la DB
+	- Maneja: la coneccion, el statement, el nombre del usuario, el password del usuario, la ubicacion de la base de datos y los 		metodos doSelect, doConnection y closeConnection
+Usar applicationDBManager para para hacer los querries

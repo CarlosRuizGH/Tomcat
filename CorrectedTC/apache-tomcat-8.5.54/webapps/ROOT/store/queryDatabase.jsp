@@ -23,7 +23,7 @@
 		//Define the selected tables
 		tables="department";
 		//Establish the where clause
-		whereClause="dep_name!='Merengue'";		
+		whereClause="dep_name='Pop'";		
 		
 		//Try to connect the database using the MySQLConnector class	
 		try{

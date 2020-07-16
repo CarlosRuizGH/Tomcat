@@ -2,3 +2,12 @@ insert into department (dep_name, dep_desc) values ("KPop","Korean Pop");
 insert into department (dep_name) values ("Pop");
 insert into department (dep_name) values ("Indie Rock");
 insert into department (dep_name) values ("Salsa");
+
+
+insert into user (first_name, last_name, email, hashing) values ('Arroyo', 'Record', 'arroyorecord@gmail.com'. 'password');
+
+
+Insert into product (prod_name, dep_id, user_id) value ('Its me',1,1);
+Insert into product (prod_name, dep_id, user_id, artist) value ('Thriller',2,1, 'Michael Jackson');
+Insert into product (prod_name, dep_id, user_id, artist) value ('The New Abnormal',3,1, 'The Strokes');
+Insert into product (prod_name, dep_id, user_id, artist) value ('Top Secrets',4,1,'Willie Colon');
