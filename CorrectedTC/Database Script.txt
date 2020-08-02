@@ -71,20 +71,6 @@ create table department (
 	PRIMARY KEY (dep_id)
 	);
 
-create table product (
-	prod_id int auto_increment,
-	prod_name varchar(64) NOT NULL,
-	prod_author varchar(20),
-	prod_descr varchar(200),
-	dep_id int,
-	bid_id int,
-	prod_pic varchar(100),
-	prod_date varchar(32),
-	PRIMARY KEY (prod_id),
-	FOREIGN KEY (dep_id) REFERENCES department (dep_id),
-	FOREIGN KEY (bid_id) REFERENCES bids (bid_id)
-	);
-
 create table bids (
 	bid_id int auto_increment,
 	bid_product int,
@@ -93,11 +79,25 @@ create table bids (
 	bid_owner boolean,
 	bid_date datetime,
 	PRIMARY KEY (bid_id),
-	FOREIGN KEY (bid_product) REFERENCES product(prod_id),
-	FOREIGN KEY (bid_user) REFERENCES user(user_id)
+	FOREIGN KEY (bid_product) REFERENCES product(prod_id)
+	);
+
+create table product (
+	prod_id int auto_increment,
+	prod_name varchar(64) NOT NULL,
+	prod_author varchar(20),
+	prod_descr varchar(200),
+	dep_id int,
+	bid_id int,
+	prod_img varbinary(256),
+	prod_date varchar(32),
+	PRIMARY KEY (prod_id),
+	FOREIGN KEY (dep_id) REFERENCES department (dep_id),
+	FOREIGN KEY (bid_id) REFERENCES bids (bid_id)
 	);
 
 
+ALTER TABLE bids ADD FOREIGN KEY (bid_product) REFERENCES product(prod_id);  
 
 create user 'administrator'@'localhost' identified by 'mobiledb';
 

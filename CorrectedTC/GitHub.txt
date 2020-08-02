@@ -1,0 +1,8 @@
+git hub:
+
+
+git add .
+
+git commit -m "(Whatever new I do)"
+
+git push
